@@ -76,7 +76,7 @@ const handleSubmit = async (e) => {
 
     loader(messageDiv)
 
-    const response = await fetch('https://react-chatgpt-rho.vercel.app/', {
+    const response = await fetch('https://react-chatgpt-server-five.vercel.app/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
