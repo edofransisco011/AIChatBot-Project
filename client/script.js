@@ -10,6 +10,7 @@ function loader(element) {
     element.textContent = ''
 
     loadInterval = setInterval(() => {
+
         element.textContent += '.';
 
         if (element.textContent === '....') {
@@ -45,9 +46,9 @@ function chatStripe(isAi, value, uniqueId) {
         <div class="wrapper ${isAi && 'ai'}">
             <div class="chat">
                 <div class="profile">
-                    <img
-                      src=${isAi ? bot : user}
-                      alt="${isAi ? 'bot' : 'user'}"
+                    <img 
+                      src=${isAi ? bot : user} 
+                      alt="${isAi ? 'bot' : 'user'}" 
                     />
                 </div>
                 <div class="message" id=${uniqueId}>${value}</div>
@@ -62,11 +63,11 @@ const handleSubmit = async (e) => {
 
     const data = new FormData(form)
 
-    // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
 
     form.reset()
 
+    // bot's chatstripe
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
 
@@ -76,7 +77,7 @@ const handleSubmit = async (e) => {
 
     loader(messageDiv)
 
-    const response = await fetch('https://react-chatgpt-server-five.vercel.app/', {
+    const response = await fetch('https://react-chatgpt-ai6xlq2z0-edofransisco011.vercel.app/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
