@@ -4,11 +4,8 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
-    "server": "node server"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
